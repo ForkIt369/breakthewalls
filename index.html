@@ -10,7 +10,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #E6E6FA; /* Light lavender background color */
+            background-color: #E6E6FA;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,7 +23,7 @@
             height: 80vh;
             width: 90vw;
             max-width: 600px;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for contrast */
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -73,6 +73,15 @@
             width: 14px;
             height: 13px;
         }
+        #login-buttons {
+            margin-top: 20px;
+        }
+        #login-buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -85,7 +94,13 @@
             <div id="wall"></div>
             <div id="grid-container"></div>
         </div>
+        <div id="login-buttons">
+            <button id="telegram-login">Login with Telegram</button>
+            <button id="ton-wallet-connect">Connect TON Wallet</button>
+        </div>
     </div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tonweb@0.0.1/index.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

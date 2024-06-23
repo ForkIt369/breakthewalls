@@ -6,6 +6,8 @@ const wall = document.getElementById('wall');
 const gridContainer = document.getElementById('grid-container');
 const progressBar = document.getElementById('progress-bar');
 const totalBitsDisplay = document.getElementById('total-bits');
+const telegramLoginButton = document.getElementById('telegram-login');
+const tonWalletConnectButton = document.getElementById('ton-wallet-connect');
 
 const wallSequences = [
     ['1B3.png', '2B3.png', '4B3.png', '8B3.png'],
@@ -87,3 +89,26 @@ wall.addEventListener('click', () => {
 updateWall();
 updateProgressBar();
 updateTotalBits();
+
+// Telegram Web App Login
+telegramLoginButton.addEventListener('click', () => {
+    Telegram.WebApp.ready();
+    const user = Telegram.WebApp.initDataUnsafe.user;
+    if (user) {
+        alert(`Hello, ${user.first_name} ${user.last_name}`);
+        // Proceed with game initialization or user-specific logic
+    } else {
+        alert('Telegram login failed');
+    }
+});
+
+// TON Wallet Connect
+tonWalletConnectButton.addEventListener('click', async () => {
+    try {
+        const tonweb = new TonWeb();
+        // Implement TON wallet connection logic here
+        alert('TON Wallet connection logic to be implemented');
+    } catch (error) {
+        console.error('TON Wallet connection failed', error);
+    }
+});
